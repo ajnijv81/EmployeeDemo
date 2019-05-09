@@ -21,7 +21,6 @@ public class EmployeeController {
     @GetMapping("/all")
     public Iterable<Employee> all(){ return employeeService.getAllEmployees(); }
 
-    @PostMapping("/")
     public Employee save(@RequestBody Employee employee) { return employeeService.saveEmployee(employee); }
 
     @GetMapping("/{id}")

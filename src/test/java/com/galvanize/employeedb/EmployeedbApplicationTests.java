@@ -51,8 +51,9 @@ public class EmployeedbApplicationTests {
     @Test
     public void getEmplloyeeShouldReturnASingleEmployeeWhenAnEmpIDisProvided() throws ParseException{
         //Setup
-        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-        Employee employee = new Employee(1L, "Joe Test", "123 Any Street", "Anytown", "GA", "30269", sdf.parse("03/14/2018"));
+        //SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+        Employee employee = new Employee();
+        Employee employee = new Employee(1L, "Joe Test", "123 Any Street", "Anytown", "GA", "30269", "03/14/2018");
 
         given(employeeRepository.findById(1L)).willReturn(java.util.Optional.of(employee));
         EmployeeService es = new EmployeeService(employeeRepository);
@@ -72,6 +73,7 @@ public class EmployeedbApplicationTests {
 
         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
         Employee employee = new Employee(1L, "Joe Test", "123 Any Street", "Anytown", "GA", "30269", sdf.parse("03/14/2018"));
+        employee
         //Setup
         given(employeeRepository.save( employee )).willReturn( employee );
         EmployeeService es = new EmployeeService(employeeRepository);
