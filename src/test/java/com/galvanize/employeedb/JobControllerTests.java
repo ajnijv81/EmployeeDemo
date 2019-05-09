@@ -1,7 +1,6 @@
 package com.galvanize.employeedb;
 
 import com.galvanize.employeedb.Controllers.JobController;
-import com.galvanize.employeedb.Entities.Employee;
 import com.galvanize.employeedb.Entities.Job;
 import com.galvanize.employeedb.Repositories.JobRepository;
 import com.galvanize.employeedb.Services.JobService;
@@ -53,4 +52,6 @@ public class JobControllerTests {
 
         //Teardown
     }
+
+
 }

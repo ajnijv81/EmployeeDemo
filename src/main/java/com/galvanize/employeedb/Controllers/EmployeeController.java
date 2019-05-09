@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/employee")
+@CrossOrigin(origins = "http://localhost:4200")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
@@ -21,6 +22,7 @@ public class EmployeeController {
     @GetMapping("/all")
     public Iterable<Employee> all(){ return employeeService.getAllEmployees(); }
 
+    @PostMapping(value = "")
     public Employee save(@RequestBody Employee employee) { return employeeService.saveEmployee(employee); }
 
     @GetMapping("/{id}")

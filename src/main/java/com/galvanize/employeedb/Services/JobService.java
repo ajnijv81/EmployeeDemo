@@ -21,8 +21,8 @@ public class JobService {
         repository.save(job);
     }
 
-    /*public ArrayList<Job> getJobHistoryByEmployeeId(Long empId) {
+    public ArrayList<Job> getJobHistoryByEmployeeId(Long empId) {
         return repository.employeeJobHistoryByEmpID(empId);
-    }*/
+    }
 
 }

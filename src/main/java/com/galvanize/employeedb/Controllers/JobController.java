@@ -34,12 +34,12 @@ public class JobController {
     }
 
 
-    /*@GetMapping("{/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<?> getJobHistoryByEmployeeId( @PathVariable("id") Long empId){
         ModelMap modelmap = new ModelMap();
 
         modelmap.put("job", this.service.getJobHistoryByEmployeeId(empId));
         return new ResponseEntity<>(modelmap, HttpStatus.OK);
-}*/
+}
 
     }
