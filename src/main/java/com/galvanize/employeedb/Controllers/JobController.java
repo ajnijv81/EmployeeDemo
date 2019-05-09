@@ -8,10 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/job")
@@ -24,14 +23,23 @@ public class JobController {
         this.service = service;
     }
 
-    @RequestMapping(value="/add", method= RequestMethod.POST)
+    @PostMapping(value="/add")
     public ResponseEntity<?> addJob(@RequestBody Job job,
                                          Model model, BindingResult result ){
         ModelMap modelmap = new ModelMap();
 
         this.service.addJob(job);
         modelmap.put("message", "Saved");
-
         return  new ResponseEntity<>(modelmap, HttpStatus.OK);
     }
-}
+
+
+    /*@GetMapping("{/{id}")
+    public ResponseEntity<?> getJobHistoryByEmployeeId( @PathVariable("id") Long empId){
+        ModelMap modelmap = new ModelMap();
+
+        modelmap.put("job", this.service.getJobHistoryByEmployeeId(empId));
+        return new ResponseEntity<>(modelmap, HttpStatus.OK);
+}*/
+
+    }

@@ -35,8 +35,8 @@ public class JobControllerTests {
         Job job = new Job();
         job.setEmpId(2L);
         job.setCustomer("TestNm");
-        job.setEndDate(sDate.parse("2018/02-/22"));
-        job.setStartDate(sDate.parse("2017-02-02"));
+        job.setEndDate(sDate.parse("2018/02/22"));
+        job.setStartDate(sDate.parse("2017/02/02"));
 
         //Setup
         given(jobRepository.save( job )).willReturn( job );
