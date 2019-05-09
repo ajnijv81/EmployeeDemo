@@ -8,63 +8,63 @@ import java.util.Date;
 @Entity(name="JOB")
 @Data
 public class Job {
-
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name = "JOB_ID", unique = true, nullable = false)
-        private Long JobID;
-        @Column(name="EMP_ID")
-        private Long EmpID;
-
-
-    @Column(name="CUSTOMER")
-        private String Customer;
-
-        @Column(name="STARTDATE")
-        private Date StartDate;
-
-        @Column(name="ENDDATE")
-        private Date EndDate;
-
-
-    public Long getJobID() {
-        return JobID;
+    public Long getJobId() {
+        return jobId;
     }
 
-    public void setJobID(Long jobID) {
-        JobID = jobID;
+    public void setJobId(Long jobId) {
+        this.jobId = jobId;
     }
 
-    public Long getEmpID() {
-        return EmpID;
+    public Long getEmpId() {
+        return empId;
     }
 
-    public void setEmpID(Long empID) {
-        EmpID = empID;
+    public void setEmpId(Long empId) {
+        this.empId = empId;
     }
 
     public String getCustomer() {
-        return Customer;
+        return customer;
     }
 
     public void setCustomer(String customer) {
-        Customer = customer;
+        this.customer = customer;
     }
 
     public Date getStartDate() {
-        return StartDate;
+        return startDate;
     }
 
     public void setStartDate(Date startDate) {
-        StartDate = startDate;
+        this.startDate = startDate;
     }
 
     public Date getEndDate() {
-        return EndDate;
+        return endDate;
     }
 
     public void setEndDate(Date endDate) {
-        EndDate = endDate;
+        this.endDate = endDate;
     }
+
+    @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long jobId;
+
+        @Column(name="EMP_ID")
+        private Long empId;
+
+
+        @Column(name="CUSTOMER")
+        private String customer;
+
+        @Column(name="STARTDATE")
+        private Date startDate;
+
+        @Column(name="ENDDATE")
+        private Date endDate;
+
+
 
 }

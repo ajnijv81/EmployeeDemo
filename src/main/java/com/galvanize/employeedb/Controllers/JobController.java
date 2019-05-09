@@ -24,14 +24,14 @@ public class JobController {
         this.service = service;
     }
 
-    @RequestMapping(value="/job", method= RequestMethod.POST)
+    @RequestMapping(value="/add", method= RequestMethod.POST)
     public ResponseEntity<?> addJob(@RequestBody Job job,
                                          Model model, BindingResult result ){
         ModelMap modelmap = new ModelMap();
 
         this.service.addJob(job);
         modelmap.put("message", "Saved");
-        ResponseEntity<?> out = new ResponseEntity<>(modelmap, HttpStatus.OK);
-        return out;
+
+        return  new ResponseEntity<>(modelmap, HttpStatus.OK);
     }
 }
